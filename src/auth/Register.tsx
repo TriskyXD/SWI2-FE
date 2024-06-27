@@ -48,7 +48,7 @@ const Register: React.FC = () => {
         <Container className="py-5 h-100">
             <Row className="d-flex justify-content-center align-items-center h-100">
                 <Col xs={12} md={8} lg={6} xl={5}>
-                    <Card className="bg-dark text-white" style={{ borderRadius: '1rem' }}>
+                    <Card className="bg-dark text-white">
                         <Card.Body className="p-5 text-center">
                             <div className="mb-md-5 mt-md-4 pb-5">
                                 <h2 className="fw-bold mb-4 text-uppercase">Register</h2>

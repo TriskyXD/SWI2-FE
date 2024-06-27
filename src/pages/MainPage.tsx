@@ -364,7 +364,7 @@ const MainPage = () => {
                 onClick={(e) => openChat(e, c)}
                 className={"w-100 mt-1 mb-1 text-start"}
                 key={c.chat.exchange}
-                style={{ background: 'black', color: 'white' }}
+                style={{ background: 'black', color: 'white', border: 'black' }}
             >
                 <span className={"h5"}> {c.chat.chatName} </span><br />
                 <span className={c.seen ? "" : "fw-bold"}> {displayedMessage} </span>
@@ -672,8 +672,12 @@ const MainPage = () => {
                         </Form>
                     </Col>
                     <Col xs={2} sm={1}>
-                        <Button type="submit" onClick={handleSend} style={{ background: 'black', color: 'white' }}>
-                            Send
+                        <Button type="submit" onClick={handleSend} style={{ background: 'black', color: 'white', border: 'black' }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 className="bi bi-send" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                            </svg>
                         </Button>
                     </Col>
                 </Row>
@@ -685,13 +689,13 @@ const MainPage = () => {
             <Navbar className="bg-black">
                 <Navbar.Brand href="#" className="ms-4">
                     <span style={{fontWeight: "bold", fontSize: "1.5rem", color: "#fff"}}>
-                      SWI2 Chatting Application
+                      ChatApp
                     </span>
                 </Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end me-4">
                     <Nav>
                         <Nav.Link as={NavLink} onClick={logout}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red"
                                  className="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                       d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
@@ -704,18 +708,17 @@ const MainPage = () => {
             </Navbar>
             <Container fluid className={"h-100"}>
                 <Row className={"row-fluid h-100"}>
-                    <Col xs={4} sm={3} md={3} lg={2} style={{borderRight: '3px solid #000'}}
+                    <Col xs={4} sm={3} md={3} lg={2} style={{borderRight: '3px solid #000', overflowY:'auto'}}
                          className={"col-fluid h-100"}>
                         <div className={"mt-3"}>
                             <p>
                                 <OverlayTrigger
                                     placement="top"
                                     delay={{show: 250, hide: 400}}
-                                    overlay={<Tooltip>Create new chat</Tooltip>}
+                                    overlay={<Tooltip>New chat</Tooltip>}
                                 >
                                     <Icon.PlusSquareFill onClick={handleCreateChatClick} style={{cursor: "pointer"}} className={"text-dark me-2 mb-1"} />
                                 </OverlayTrigger>
-                                <span>Chat rooms:</span>
                             </p>
                         </div>
                         {
